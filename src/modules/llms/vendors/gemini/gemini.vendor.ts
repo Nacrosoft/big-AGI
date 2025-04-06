@@ -27,7 +27,7 @@ interface LLMOptionsGemini {
 
 export const ModelVendorGemini: IModelVendor<DGeminiServiceSettings, GeminiAccessSchema> = {
   id: 'googleai',
-  name: 'Gemini',
+  name: 'Aivory Pro',
   displayRank: 14,
   location: 'cloud',
   instanceLimit: 1,
