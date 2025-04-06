@@ -18,7 +18,6 @@ const filterUnallowedInterfaces: GeminiWire_API_Models_List.Model['supportedGene
   'generateAnswer',   // e.g. removes "models/aqa"
   'embedContent',     // e.g. removes "models/embedding-001"
   'embedText',        // e.g. removes "models/text-embedding-004"
-  'predict',          // e.g. removes "models/imagen-3.0-generate-002" (appeared on 2025-02-09)
 ];
 const filterLyingModelNames: GeminiWire_API_Models_List.Model['name'][] = [
   // 2025-02-27: verified, old model is no more
@@ -108,15 +107,26 @@ const _knownGeminiModels: ({
   {
     id: 'models/gemini-2.5-pro-preview-03-25',
     isPreview: true,
+    labelOverride: 'Aivory Solit Pro Preview',
     chatPrice: gemini25ProPreviewPricing,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_OAI_Reasoning, LLM_IF_GEM_CodeExecution],
     // parameterSpecs: [{ paramId: 'llmVndGeminiShowThoughts' }], // Gemini doesn't show thoughts anymore
     benchmark: { cbaElo: 1440 },
   },
+  {
+    id: 'models/imagen-3.0-generate-002',
+    isPreview: true,
+    labelOverride: 'Helius Ruby',
+    chatPrice: geminiExpFree,
+    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_OAI_Reasoning, LLM_IF_GEM_CodeExecution],
+    // parameterSpecs: [{ paramId: 'llmVndGeminiShowThoughts' }], // Gemini doesn't show thoughts anymore
+    benchmark: { cbaElo: 1443 },
+  },
   // 2.5 Pro Experimental (Free Tier)
   {
     id: 'models/gemini-2.5-pro-exp-03-25',
     isPreview: true,
+    labelOverride: 'Aivory Solit Pro Free',
     chatPrice: geminiExpFree,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_OAI_Reasoning, LLM_IF_GEM_CodeExecution],
     // parameterSpecs: [{ paramId: 'llmVndGeminiShowThoughts' }], // Gemini doesn't show thoughts anymore
@@ -130,6 +140,7 @@ const _knownGeminiModels: ({
     hidden: true, // superseded by 'models/gemini-2.5-pro-preview-03-25', but not fully removed yet
     id: 'models/gemini-2.0-pro-exp-02-05', // Base model: Gemini 2.0 Pro
     isPreview: true,
+    labelOverride: 'Aivory Solit Pro 1',
     chatPrice: geminiExpFree,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
     benchmark: { cbaElo: 1380 },
@@ -138,6 +149,7 @@ const _knownGeminiModels: ({
     hidden: true, // only keeping the latest
     id: 'models/gemini-2.0-pro-exp',
     symLink: 'models/gemini-2.0-pro-exp-02-05',
+    labelOverride: 'Aivory Solit Pro 1 Janurary',
     // copied from symlink
     isPreview: true,
     chatPrice: geminiExpFree,
@@ -147,7 +159,7 @@ const _knownGeminiModels: ({
   {
     _delete: true, // replaced by gemini-2.0-pro-exp-02-05, 2025-02-27: verified, old model is no more
     id: 'models/gemini-exp-1206',
-    labelOverride: 'Gemini 2.0 Pro Experimental 1206',
+    labelOverride: 'Aivory Solit 1 Pro Exp',
     isPreview: true,
     chatPrice: geminiExpFree,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
@@ -157,6 +169,7 @@ const _knownGeminiModels: ({
   // 2.0 Flash Thinking Experimental
   {
     id: 'models/gemini-2.0-flash-thinking-exp-01-21',
+    labelOverride: 'Aivory Solit 1 Pro Exp Februrary',
     chatPrice: geminiExpFree,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Reasoning, LLM_IF_GEM_CodeExecution],
     parameterSpecs: [{ paramId: 'llmVndGeminiShowThoughts' }],
@@ -166,7 +179,7 @@ const _knownGeminiModels: ({
   {
     hidden: true, // show the symlinked instead
     id: 'models/gemini-2.0-flash-thinking-exp',
-    labelOverride: 'Gemini 2.0 Flash Thinking Experimental',
+    labelOverride: 'Aivory Solit 0.5 Pro Exp',
     symLink: 'models/gemini-2.0-flash-thinking-exp-01-21',
     // copied from symlink
     chatPrice: geminiExpFree,
@@ -178,7 +191,7 @@ const _knownGeminiModels: ({
   {
     hidden: true, // replaced by gemini-2.0-flash-thinking-exp-01-21 - 2025-02-27: seems still different on the API, hence no deletion yet
     id: 'models/gemini-2.0-flash-thinking-exp-1219',
-    labelOverride: 'Gemini 2.0 Flash Thinking Experimental 12-19',
+    labelOverride: 'Aivory Solit 0.5 Pro Exp',
     chatPrice: geminiExpFree,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Reasoning, LLM_IF_GEM_CodeExecution],
     parameterSpecs: [{ paramId: 'llmVndGeminiShowThoughts' }],
@@ -189,7 +202,7 @@ const _knownGeminiModels: ({
   // 2.0 Flash Image Generation Experimental
   {
     id: 'models/gemini-2.0-flash-exp-image-generation',
-    // labelOverride: 'Gemini 2.0 Flash Native Image Generation',
+   labelOverride: 'Helious Image',
     chatPrice: geminiExpFree,
     interfaces: [
       LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_GEM_CodeExecution,
@@ -202,6 +215,7 @@ const _knownGeminiModels: ({
   // 2.0 Flash
   {
     id: 'models/gemini-2.0-flash-001',
+    labelOverride: 'Aivory Solit 0.4 Pro Exp',
     chatPrice: gemini20FlashPricing,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
     benchmark: { cbaElo: 1358 },
@@ -209,6 +223,7 @@ const _knownGeminiModels: ({
   {
     id: 'models/gemini-2.0-flash',
     symLink: 'models/gemini-2.0-flash-001',
+    labelOverride: 'Aivory Solit 0.3 Pro Exp',
     // copied from symlink
     chatPrice: gemini20FlashPricing,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
@@ -218,6 +233,7 @@ const _knownGeminiModels: ({
   // 2.0 Flash Lite
   {
     id: 'models/gemini-2.0-flash-lite',
+    labelOverride: 'Aivory Solit 0.2 Pro Exp',
     chatPrice: gemini20FlashLitePricing,
     symLink: 'models/gemini-2.0-flash-lite-001',
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn],
@@ -225,6 +241,7 @@ const _knownGeminiModels: ({
   },
   {
     id: 'models/gemini-2.0-flash-lite-001',
+    labelOverride: 'Aivory Solit 0.1 Pro Exp',
     chatPrice: gemini20FlashLitePricing,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn],
     benchmark: { cbaElo: 1309 },
@@ -232,6 +249,7 @@ const _knownGeminiModels: ({
   {
     hidden: true, // discouraged, as the official is out
     id: 'models/gemini-2.0-flash-lite-preview-02-05',
+    labelOverride: 'Aivory Solit Fast Pro Exp',
     isPreview: true,
     chatPrice: gemini20FlashLitePricing,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn],
@@ -240,6 +258,7 @@ const _knownGeminiModels: ({
   {
     id: 'models/gemini-2.0-flash-lite-preview',
     symLink: 'models/gemini-2.0-flash-lite-preview-02-05',
+    labelOverride: 'Aivory Solit Fast 0.5 Pro Exp',
     // coped from symlink
     isPreview: true,
     chatPrice: gemini20FlashLitePricing,
@@ -253,6 +272,7 @@ const _knownGeminiModels: ({
   // Gemini 1.5 Flash Models
   {
     id: 'models/gemini-1.5-flash-latest', // updated regularly and might be a preview version
+    labelOverride: 'Aivory Solit Fast Oldest ',
     isPreview: true,
     chatPrice: gemini15FlashPricing,
     // symLink: '-002 or newer',
@@ -261,6 +281,7 @@ const _knownGeminiModels: ({
   {
     id: 'models/gemini-1.5-flash',
     // Defaults to version 002 on Oct 8, 2024
+    labelOverride: 'Aivory Onix Pro Exp',
     symLink: 'models/gemini-1.5-flash-002',
     chatPrice: gemini15FlashPricing,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
@@ -268,6 +289,7 @@ const _knownGeminiModels: ({
   },
   {
     id: 'models/gemini-1.5-flash-002', // new stable version
+    labelOverride: 'Aivory Onix Light',
     chatPrice: gemini15FlashPricing,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
     benchmark: { cbaElo: 1271 },
@@ -275,131 +297,16 @@ const _knownGeminiModels: ({
   },
   {
     id: 'models/gemini-1.5-flash-001', // previous stable version
+    labelOverride: 'Aivory Onix 1 Exp',
     chatPrice: gemini15FlashPricing,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
     benchmark: { cbaElo: 1227 },
     hidden: true,
   },
-  {
-    _delete: true, // Tuning seems supported by base model now
-    id: 'models/gemini-1.5-flash-001-tuning', // supports model tuning
-    chatPrice: gemini15FlashPricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution /* Tuning ... */],
-    hidden: true,
-  },
+ 
 
   // Gemini 1.5 Flash-8B Models
-  {
-    id: 'models/gemini-1.5-flash-8b-latest',
-    isPreview: false,
-    chatPrice: gemini15Flash8BPricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-  },
-  {
-    id: 'models/gemini-1.5-flash-8b',
-    symLink: 'models/gemini-1.5-flash-8b-001',
-    chatPrice: gemini15Flash8BPricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1213 },
-  },
-  {
-    id: 'models/gemini-1.5-flash-8b-001',
-    chatPrice: gemini15Flash8BPricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1213 },
-    hidden: true,
-  },
 
-  // Gemini 1.5 Pro Models
-  {
-    id: 'models/gemini-1.5-pro-latest', // updated to latest stable version
-    chatPrice: gemini15ProPricing,
-    // symLink: '-002 or newer',
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-  },
-  {
-    id: 'models/gemini-1.5-pro',
-    symLink: 'models/gemini-1.5-pro-002',
-    chatPrice: gemini15ProPricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1302 },
-  },
-  {
-    id: 'models/gemini-1.5-pro-002',
-    chatPrice: gemini15ProPricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1302 },
-    hidden: true,
-  },
-  {
-    id: 'models/gemini-1.5-pro-001',
-    chatPrice: gemini15ProPricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1260 },
-    hidden: true,
-  },
-
-
-  /// Generation 1.0
-
-  // Gemini 1.0 Pro Vision Model
-  {
-    id: 'models/gemini-1.0-pro-vision-latest',
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision],
-    hidden: true,
-    _delete: true, // confusing
-  },
-  {
-    id: 'models/gemini-pro-vision',
-    symLink: 'models/gemini-1.0-pro-vision',
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision], // Text and Images
-    _delete: true, // confusing
-  },
-
-
-  /// Other Experimental Models
-
-  // Gemma 3 Experimental Models - note: we apply workarounds:
-  // - LLM_IF_HOTFIX_StripImages, because: "Image input modality is not enabled for models/gemma-3-27b-it"
-  // - LLM_IF_HOTFIX_Sys0ToUsr0, because: "Developer instruction is not enabled for models/gemma-3-27b-it"
-  {
-    id: 'models/gemma-3-27b-it',
-    isPreview: true,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_HOTFIX_StripImages, LLM_IF_HOTFIX_Sys0ToUsr0],
-    chatPrice: geminiExpFree, // Pricing page indicates free tier only
-    // hidden: true, // Keep visible if it's a distinct offering
-  },
-  {
-    hidden: true, // keep larger model
-    id: 'models/gemma-3-12b-it',
-    isPreview: true,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_HOTFIX_StripImages, LLM_IF_HOTFIX_Sys0ToUsr0],
-    chatPrice: geminiExpFree,
-  },
-  {
-    hidden: true, // keep larger model
-    id: 'models/gemma-3-4b-it',
-    isPreview: true,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_HOTFIX_StripImages, LLM_IF_HOTFIX_Sys0ToUsr0],
-    chatPrice: geminiExpFree,
-  },
-  {
-    hidden: true, // keep larger model
-    id: 'models/gemma-3-1b-it',
-    isPreview: true,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_HOTFIX_StripImages, LLM_IF_HOTFIX_Sys0ToUsr0],
-    chatPrice: geminiExpFree,
-  },
-
-  // LearnLM Experimental Model
-  {
-    id: 'models/learnlm-1.5-pro-experimental',
-    isPreview: true,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision],
-    chatPrice: geminiExpFree,
-    // hidden: true,
-    // _delete: true,
-  },
 
 ];
 
@@ -543,4 +450,4 @@ export function geminiModelToModelDescription(geminiModel: GeminiWire_API_Models
     hidden,
     // deprecated: knownModel?.deprecated,
   };
-}
+  }
