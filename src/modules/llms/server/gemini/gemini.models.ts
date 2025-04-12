@@ -189,7 +189,7 @@ const _knownGeminiModels: ({
     isPreview: true,
   },
   {
-    hidden: true, // replaced by gemini-2.0-flash-thinking-exp-01-21 - 2025-02-27: seems still different on the API, hence no deletion yet
+    hidden: false, // replaced by gemini-2.0-flash-thinking-exp-01-21 - 2025-02-27: seems still different on the API, hence no deletion yet
     id: 'models/gemini-2.0-flash-thinking-exp-1219',
     labelOverride: 'Aivory Solit 0.5 Pro Exp',
     chatPrice: geminiExpFree,
