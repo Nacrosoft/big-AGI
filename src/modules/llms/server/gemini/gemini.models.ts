@@ -105,7 +105,7 @@ const _knownGeminiModels: ({
 
   // 2.5 Pro Preview (Paid Tier)
   {
-    id: 'models/gemini-2.5-pro-preview-03-25',
+    id: 'models/gemini-2.0-pro-exp-02-05',
     isPreview: true,
     labelOverride: 'Aivory Solit Pro Preview',
     chatPrice: gemini25ProPreviewPricing,
