@@ -16,6 +16,7 @@ const orOldModelIDs = [
   'anthropic/claude-2', 'anthropic/claude-2:beta', 'anthropic/claude-2.0', 'anthropic/claude-2.1', 'anthropic/claude-2.0:beta',
   // Older Google models
   'google/palm-2-',
+  'openrouter/quasar-alpha',
   // Older Meta models
   'meta-llama/llama-3-', 'meta-llama/llama-2-',
 ];
@@ -28,7 +29,7 @@ const orModelFamilyOrder = [
   // Specialized/AI companies
   'perplexity/', 'phind/', 'qwen/', 'inflection/',
   // Research/open models
-  'nvidia/', 'microsoft/', 'nousresearch/', 'openchat/', // 'huggingfaceh4/',
+  'nvidia/', 'microsoft/', 'openrouter', 'nousresearch/', 'openchat/', // 'huggingfaceh4/',
   // Community/other providers
   // 'gryphe/', 'thedrummer/', 'undi95/', 'cognitivecomputations/', 'sao10k/',
 ];
