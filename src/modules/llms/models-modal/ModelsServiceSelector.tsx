@@ -1,7 +1,11 @@
-import * as React from 'react';
+oseablePopup>
 
-import { Badge, Box, Button, IconButton, ListItemDecorator, MenuItem, Option, Select, Tooltip, Typography } from '@mui/joy';
-import AddIcon from '@mui/icons-material/Add';
+    </Box>
+  );
+      }import * as React from 'react';
+
+import { Badge, Box, IconButton, ListItemDecorator, MenuItem, Option, Select, Tooltip, Typography } from '@mui/joy';
+// Removed AddIcon import as it's no longer used here
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 import type { DModelsService, DModelsServiceId } from '~/common/stores/llms/llms.service.types';
@@ -52,7 +56,8 @@ export function ModelsServiceSelector(props: {
   // external state
   const isMobile = useIsMobile();
 
-  const handleShowVendors = (event: React.MouseEvent<HTMLElement>) => setVendorsMenuAnchor(event.currentTarget);
+  // Removed handleShowVendors as it's no longer triggered by the removed buttons
+  // const handleShowVendors = (event: React.MouseEvent<HTMLElement>) => setVendorsMenuAnchor(event.currentTarget);
 
   const closeVendorsMenu = () => setVendorsMenuAnchor(null);
 
@@ -143,7 +148,7 @@ export function ModelsServiceSelector(props: {
         },
       );
 
-    // prepend headers
+    // prepend headers (logic kept but commented out as in original)
     // const components: React.ReactNode[] = [];
     // let lastLocation: 'cloud' | 'local' | null = null;
     // vendorItems.forEach(item => {
@@ -208,7 +213,7 @@ export function ModelsServiceSelector(props: {
       >
         {serviceItems.map(item => item.component)}
 
-        {/* Add Service button */}
+        {/* Add Service button (commented out in original, kept for reference) */}
         {/*<ListDivider />*/}
         {/*<ListItem onClick={handleShowVendors}>*/}
         {/*  <ListItemButton>*/}
@@ -220,6 +225,8 @@ export function ModelsServiceSelector(props: {
         {/*</ListItem>*/}
       </Select>
 
+      {/* START: Removed Add Button Logic */}
+      {/*
       {(isMobile && !noServices) ? (
         <IconButton variant={noServices ? 'solid' : 'outlined'} color='primary' onClick={handleShowVendors} disabled={!!vendorsMenuAnchor} sx={{ borderColor: 'neutral.outlinedBorder' }}>
           <AddIcon />
@@ -231,6 +238,9 @@ export function ModelsServiceSelector(props: {
           </Button>
         </Tooltip>
       )}
+      */}
+      {/* END: Removed Add Button Logic */}
+
 
       {enableDeleteButton && (
         <TooltipOutlined title={`Remove ${selectedServiceItem?.service.label || 'Service'}`}>
@@ -244,7 +254,7 @@ export function ModelsServiceSelector(props: {
       )}
 
 
-      {/* vendors popup, for adding */}
+      {/* vendors popup, for adding (still here, but not easily triggerable without the buttons) */}
       <CloseablePopup
         menu anchorEl={vendorsMenuAnchor} onClose={closeVendorsMenu}
         minWidth={200}
@@ -256,4 +266,4 @@ export function ModelsServiceSelector(props: {
 
     </Box>
   );
-}
+    }
