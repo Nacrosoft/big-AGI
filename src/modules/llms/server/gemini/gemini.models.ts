@@ -104,23 +104,23 @@ const _knownGeminiModels: ({
   /// Generation 2.5
 
   // 2.5 Pro Preview (Paid Tier)
-  {
-    id: 'models/gemini-2.0-pro-exp-02-05',
-    isPreview: true,
-    labelOverride: 'Aivory Solit Pro Preview',
-    chatPrice: geminiExpFree,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_OAI_Reasoning, LLM_IF_GEM_CodeExecution],
+//  {
+  ///  id: 'models/gemini-2.0-pro-exp-02-05',
+  //  isPreview: true,
+  //  labelOverride: 'Aivory Solit Pro Preview',
+ //   chatPrice: geminiExpFree,
+   // interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_OAI_Reasoning, LLM_IF_GEM_CodeExecution],
     // parameterSpecs: [{ paramId: 'llmVndGeminiShowThoughts' }], // Gemini doesn't show thoughts anymore
-    benchmark: { cbaElo: 1440 },
-  },
-  {
-    id: 'models/imagen-3.0-generate-002',
-    isPreview: true,
-    labelOverride: 'Helius Ruby',
-    chatPrice: geminiExpFree,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_OAI_Reasoning, LLM_IF_GEM_CodeExecution],
+   // benchmark: { cbaElo: 1440 },
+ // },
+//  {
+ //   id: 'models/imagen-3.0-generate-002',
+   // isPreview: true,
+    //labelOverride: 'Helius Ruby',
+   // chatPrice: geminiExpFree,
+  //  interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_OAI_Reasoning, LLM_IF_GEM_CodeExecution],
     // parameterSpecs: [{ paramId: 'llmVndGeminiShowThoughts' }], // Gemini doesn't show thoughts anymore
-    benchmark: { cbaElo: 1443 },
+//    benchmark: { cbaElo: 1443 },
   },
   // 2.5 Pro Experimental (Free Tier)
   {
@@ -135,69 +135,7 @@ const _knownGeminiModels: ({
 
   /// Generation 2.0
 
-  // 2.0 Pro Experimental (Superseded by 2.5 Pro Preview/Exp)
-  {
-    hidden: true, // superseded by 'models/gemini-2.5-pro-preview-03-25', but not fully removed yet
-    id: 'models/gemini-2.0-pro-exp-02-05', // Base model: Gemini 2.0 Pro
-    isPreview: true,
-    labelOverride: 'Aivory Solit Pro 1',
-    chatPrice: geminiExpFree,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1380 },
-  },
-  {
-    hidden: true, // only keeping the latest
-    id: 'models/gemini-2.0-pro-exp',
-    symLink: 'models/gemini-2.0-pro-exp-02-05',
-    labelOverride: 'Aivory Solit Pro 1 Janurary',
-    // copied from symlink
-    isPreview: true,
-    chatPrice: geminiExpFree,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1380 },
-  },
-  {
-    _delete: true, // replaced by gemini-2.0-pro-exp-02-05, 2025-02-27: verified, old model is no more
-    id: 'models/gemini-exp-1206',
-    labelOverride: 'Aivory Solit 1 Pro Exp',
-    isPreview: true,
-    chatPrice: geminiExpFree,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1373 },
-  },
 
-  // 2.0 Flash Thinking Experimental
-  {
-    id: 'models/gemini-2.0-flash-thinking-exp-01-21',
-    labelOverride: 'Aivory Solit 1 Pro Exp Februrary',
-    chatPrice: geminiExpFree,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Reasoning, LLM_IF_GEM_CodeExecution],
-    parameterSpecs: [{ paramId: 'llmVndGeminiShowThoughts' }],
-    benchmark: { cbaElo: 1385 },
-    isPreview: true,
-  },
-  {
-    hidden: true, // show the symlinked instead
-    id: 'models/gemini-2.0-flash-thinking-exp',
-    labelOverride: 'Aivory Solit 0.5 Pro Exp',
-    symLink: 'models/gemini-2.0-flash-thinking-exp-01-21',
-    // copied from symlink
-    chatPrice: geminiExpFree,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Reasoning, LLM_IF_GEM_CodeExecution],
-    parameterSpecs: [{ paramId: 'llmVndGeminiShowThoughts' }],
-    benchmark: { cbaElo: 1385 },
-    isPreview: true,
-  },
-  {
-    hidden: false, // replaced by gemini-2.0-flash-thinking-exp-01-21 - 2025-02-27: seems still different on the API, hence no deletion yet
-    id: 'models/gemini-2.0-flash-thinking-exp-1219',
-    labelOverride: 'Aivory Solit 0.5 Pro Exp',
-    chatPrice: geminiExpFree,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Reasoning, LLM_IF_GEM_CodeExecution],
-    parameterSpecs: [{ paramId: 'llmVndGeminiShowThoughts' }],
-    benchmark: { cbaElo: 1363 },
-    isPreview: true,
-  },
 
   // 2.0 Flash Image Generation Experimental
   {
@@ -213,100 +151,7 @@ const _knownGeminiModels: ({
   },
 
   // 2.0 Flash
-  {
-    id: 'models/gemini-2.0-flash-001',
-    labelOverride: 'Aivory Solit 0.4 Pro Exp',
-    chatPrice: gemini20FlashPricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1358 },
-  },
-  {
-    id: 'models/gemini-2.0-flash',
-    symLink: 'models/gemini-2.0-flash-001',
-    labelOverride: 'Aivory Solit 0.3 Pro Exp',
-    // copied from symlink
-    chatPrice: gemini20FlashPricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1358 },
-  },
-
-  // 2.0 Flash Lite
-  {
-    id: 'models/gemini-2.0-flash-lite',
-    labelOverride: 'Aivory Solit 0.2 Pro Exp',
-    chatPrice: gemini20FlashLitePricing,
-    symLink: 'models/gemini-2.0-flash-lite-001',
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn],
-    benchmark: { cbaElo: 1309 },
-  },
-  {
-    id: 'models/gemini-2.0-flash-lite-001',
-    labelOverride: 'Aivory Solit 0.1 Pro Exp',
-    chatPrice: gemini20FlashLitePricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn],
-    benchmark: { cbaElo: 1309 },
-  },
-  {
-    hidden: true, // discouraged, as the official is out
-    id: 'models/gemini-2.0-flash-lite-preview-02-05',
-    labelOverride: 'Aivory Solit Fast Pro Exp',
-    isPreview: true,
-    chatPrice: gemini20FlashLitePricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn],
-    benchmark: { cbaElo: 1309 },
-  },
-  {
-    id: 'models/gemini-2.0-flash-lite-preview',
-    symLink: 'models/gemini-2.0-flash-lite-preview-02-05',
-    labelOverride: 'Aivory Solit Fast 0.5 Pro Exp',
-    // coped from symlink
-    isPreview: true,
-    chatPrice: gemini20FlashLitePricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Fn],
-    benchmark: { cbaElo: 1309 },
-  },
-
-
-  /// Generation 1.5
-
-  // Gemini 1.5 Flash Models
-  {
-    id: 'models/gemini-1.5-flash-latest', // updated regularly and might be a preview version
-    labelOverride: 'Aivory Solit Fast Oldest ',
-    isPreview: true,
-    chatPrice: gemini15FlashPricing,
-    // symLink: '-002 or newer',
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-  },
-  {
-    id: 'models/gemini-1.5-flash',
-    // Defaults to version 002 on Oct 8, 2024
-    labelOverride: 'Aivory Onix Pro Exp',
-    symLink: 'models/gemini-1.5-flash-002',
-    chatPrice: gemini15FlashPricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1271 },
-  },
-  {
-    id: 'models/gemini-1.5-flash-002', // new stable version
-    labelOverride: 'Aivory Onix Light',
-    chatPrice: gemini15FlashPricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1271 },
-    hidden: true,
-  },
-  {
-    id: 'models/gemini-1.5-flash-001', // previous stable version
-    labelOverride: 'Aivory Onix 1 Exp',
-    chatPrice: gemini15FlashPricing,
-    interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Vision, LLM_IF_OAI_Json, LLM_IF_OAI_Fn, LLM_IF_GEM_CodeExecution],
-    benchmark: { cbaElo: 1227 },
-    hidden: true,
-  },
- 
-
-  // Gemini 1.5 Flash-8B Models
-
+  
 
 ];
 
