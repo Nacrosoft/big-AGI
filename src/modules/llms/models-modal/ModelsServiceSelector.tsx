@@ -1,8 +1,4 @@
-oseablePopup>
-
-    </Box>
-  );
-      }import * as React from 'react';
+import * as React from 'react';
 
 import { Badge, Box, IconButton, ListItemDecorator, MenuItem, Option, Select, Tooltip, Typography } from '@mui/joy';
 // Removed AddIcon import as it's no longer used here
@@ -266,4 +262,4 @@ export function ModelsServiceSelector(props: {
 
     </Box>
   );
-    }
+} // <-- Make sure this is the VERY LAST character in the file before any potential exports if structured differently
