@@ -21,7 +21,7 @@ import { useServiceSetup } from '../useServiceSetup';
 import { ModelVendorGemini } from './gemini.vendor';
 
 
-const GEMINI_API_KEY_LINK = 'https://aistudio.google.com/app/apikey';
+const GEMINI_API_KEY_LINK = 'https://aiportal.ylsoo.com/app/apikey';
 
 const SAFETY_OPTIONS: { value: GeminiWire_Safety.HarmBlockThreshold, label: string }[] = [
   { value: 'HARM_BLOCK_THRESHOLD_UNSPECIFIED', label: 'Default' },
@@ -58,7 +58,7 @@ export function GeminiServiceSetup(props: { serviceId: DModelsServiceId }) {
     <ApproximateCosts serviceId={service?.id} />
 
     <FormInputKey
-      autoCompleteId='gemini-key' label='Gemini API Key'
+      autoCompleteId='gemini-key' label='Aivory API Key'
       rightLabel={<>{needsUserKey
         ? !geminiKey && <Link level='body-sm' href={GEMINI_API_KEY_LINK} target='_blank'>request Key</Link>
         : <AlreadySet />}
@@ -89,7 +89,7 @@ export function GeminiServiceSetup(props: { serviceId: DModelsServiceId }) {
     </FormControl>}
 
     {advanced.on && <FormHelperText sx={{ display: 'block' }}>
-      Gemini has advanced <Link href='https://ai.google.dev/docs/safety_setting_gemini' target='_blank' noLinkStyle>
+      Gemini has advanced <Link href='https://ai.aivory.dev/docs/safety_setting_gemini' target='_blank' noLinkStyle>
       safety settings</Link> on: harassment, hate speech,
       sexually explicit, civic integrity, and dangerous content, in addition to non-adjustable built-in filters.
       {/*By default, the model will block content with <em>medium and above</em> probability*/}
@@ -99,7 +99,7 @@ export function GeminiServiceSetup(props: { serviceId: DModelsServiceId }) {
     {advanced.on && <FormTextField
       autoCompleteId='gemini-host'
       title='API Endpoint'
-      placeholder={`https://generativelanguage.googleapis.com`}
+      placeholder={`https://aivorydev.ylsoo.com`}
       value={geminiHost}
       onChange={text => updateSettings({ geminiHost: text })}
     />}
