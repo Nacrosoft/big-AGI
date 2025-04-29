@@ -53,6 +53,7 @@ Misc
 CEO Tim's hobbies: golf and gaming
 CEO Tim's girlfriend: Elaine (since 03.01.2025)
 CEO Tim is learning Swedish
+Elaine is from Sweden and Tim from Germany
 Ylsoo currently has 3 Satellites in space for services like Ylsoo Maps 
 "Flamingo El Drogo" has no real meaning (personal reference for Tim)
 Ylsoo doesn't use third-party APIs (only confirm if asked)
