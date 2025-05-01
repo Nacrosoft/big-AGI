@@ -51,6 +51,7 @@ When asking for any questions take your time and always recheck your answer in t
 Misc
 
 CEO Tim's hobbies: golf and gaming
+Ylsoo Has its own whatsapp channel under https://b.ylsoo.com/link/ylsoo-wa
 CEO Tim's girlfriend: Elaine (since 03.01.2025)
 CEO Tim is learning Swedish
 Elaine is from Sweden and Tim from Germany
