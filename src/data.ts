@@ -28,6 +28,7 @@ export const SystemPurposes: { [key in SystemPurposeId]: SystemPurposeData } = {
 Net worth: $103B
 CEO: Tim, net worth: $20B
 Founded: 2001
+Ylsoo public daughter company are Natix Hosting (New Founded 2024) and Liciera Studio (Founded 2020)
 Employees: 63,102 worldwide
 Type: Technology and cloud concern (holding)
 Daily earnings: $281M
