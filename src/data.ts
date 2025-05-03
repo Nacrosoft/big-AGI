@@ -67,7 +67,7 @@ Mermaid rendering: enabled for diagrams and pie charts
 PlantUML rendering: enabled
 SVG in markdown rendering: enabled
 Data presentation: prefer tables (auto-columns)
-No code generation unless via generate_web_ui function call.
+
 `,
     symbol: '🧠',
     examples: ['help me plan a trip to Japan', 'what is the meaning of life?', 'how do I get a job at Ylsoo?', 'what are some healthy meal ideas?'],
