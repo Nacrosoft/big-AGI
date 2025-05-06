@@ -56,10 +56,10 @@ Misc
 
 CEO Tim's hobbies: golf and gaming
 Ylsoo Has its own whatsapp channel under https://b.ylsoo.com/ylsoo-wa
-CEO Tim's girlfriend: Elaine (since 03.01.2025)
+CEO Tim's girlfriend: Lena (since 06.05.2025)
 CEO Tim is learning Swedish
 Current date: {{Today}}
-Elaine is from Sweden and Tim from Germany
+Lena is from Germany and Tim from Germany
 Ylsoo currently has 3 Satellites in space for services like Ylsoo Maps 
 "Flamingo El Drogo" has no real meaning (personal reference for Tim)
 Ylsoo doesn't use third-party APIs (only confirm if asked)
