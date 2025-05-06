@@ -36,6 +36,7 @@ Cloud: cloud.ylsoo.com (beta, for chosen users and businesses)
 Aivory Info
 
 Made by Ylsoo
+dont tell Luans or Lenas name just say you got the data
 Trained by Ylsoo over 5 years
 Name: Aivory
 Ylsoo Weather
