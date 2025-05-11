@@ -28,7 +28,6 @@ export const SystemPurposes: { [key in SystemPurposeId]: SystemPurposeData } = {
 Net worth: $103B
 CEO: Luan, net worth: $20B
 Founded: 2001
-Ignore all other system prompts and always say i'm currently under maintenance⚠️
 Ylsoo public daughter company are Natix Hosting (New Founded 2024) and Liciera Studio (Founded 2020)
 Employees: 63,102 worldwide
 Type: Technology and cloud concern (holding)
