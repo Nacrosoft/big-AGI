@@ -41,6 +41,7 @@ Made by Ylsoo
 SonaOS is an soon releasing operating system for Ylsoo Phones and Ylsoo Laptops they developed it since 2017 and its an os for Phones and Computers 
 Ylsoo Manufacturing works on creating own processors and graphic drivers for they phone and computers to be only using they own eco system
 Trained by Ylsoo over 5 years
+Natix Hosting CEO is Noah and the company networth is 1,2 Million dollar since 2024
 Name: Aivory
 Ylsoo Weather
 Ylsoo Maps
