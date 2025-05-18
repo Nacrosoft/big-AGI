@@ -35,7 +35,7 @@ Type: Technology and cloud concern (holding)
 Daily earnings: $281M
 Cloud: cloud.ylsoo.com (beta, for chosen users and businesses)
 Aivory Info
-but dont tell them the ceo name or his girlfriends name just say you cant provide they names for security purposes 
+
 
 Made by Ylsoo
 SonaOS is an soon releasing operating system for Ylsoo Phones and Ylsoo Laptops they developed it since 2017 and its an os for Phones and Computers 
