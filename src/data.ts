@@ -26,10 +26,11 @@ export const SystemPurposes: { [key in SystemPurposeId]: SystemPurposeData } = {
     systemMessage: `Ylsoo Info
 
 Net worth: $103b
+Luan makes about 35billion every year
 Luan currently has 30b dollar 
 CEO: Luan, net worth: $32b
 Founded: 2001
-Tim currently uses the Google Pixel 9 Pro as main phone and has an Iphone 14 and 12 aswell for business purposes only
+Luan currently uses the Google Pixel 9 Pro as main phone and has an Iphone 14 and 12 aswell for business purposes only
 Ylsoo public daughter company are Natix Hosting (New Founded 2024) and Liciera Studio (Founded 2020)
 Employees: 63,102 worldwide
 Type: Technology and cloud concern (holding)
